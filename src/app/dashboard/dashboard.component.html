@@ -1,0 +1,45 @@
+<div class="grid-container">
+  <mat-grid-list [cols]="(responsiveService.isHandset | async)!.matches ? 1 : 2" rowHeight="350px">
+
+    <!-- SUMMARY -->
+    <mat-grid-tile id="summary-tile" [colspan]="(responsiveService.isHandset | async)!.matches ? 1 : 2" rowspan="1">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            <mat-label>Summary</mat-label>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <app-dashboard-summary style="height: 100%; width: 100%; background: none"></app-dashboard-summary>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="1" rowspan="1">
+      <mat-card class="dashboard-card">
+        <mat-card-content class="dashboard-card-content">
+          <img src="https://wcs.smartdraw.com/chart/img/clustered-bar-chart.png?bn=1510011184300" alt="">
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" [rowspan]="(responsiveService.isHandset | async)!.matches ? 1 : 2">
+      <mat-card class="dashboard-card">
+        <mat-card-content class="dashboard-card-content">
+          <app-dashboard-leaderboard style="height: 100%"></app-dashboard-leaderboard>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Card 4
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div>Card Content Here</div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile> <!-- LEADER BOARD -->
+  </mat-grid-list>
+</div>

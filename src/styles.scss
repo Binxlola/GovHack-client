@@ -1,1 +1,65 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$GovHack-client-primary: mat.define-palette(mat.$green-palette);
+$GovHack-client-accent: mat.define-palette(mat.$blue-gray-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$GovHack-client-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$GovHack-client-theme: mat.define-light-theme((
+  color: (
+    primary: $GovHack-client-primary,
+    accent: $GovHack-client-accent,
+    warn: $GovHack-client-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($GovHack-client-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// Scrollbar styles
+::-webkit-scrollbar {
+  width: .5rem;
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: mat.get-color-from-palette($GovHack-client-accent, 700);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: mat.get-color-from-palette($GovHack-client-accent, 500);
+}
+
+
+// SUMMARY CARD STYLES
+#summary-container {
+  .mat-grid-tile-content {
+    justify-content: start !important ;
+    padding: 0 15px;
+  }
+}
+
+#summary-tile > div > mat-card {
+  box-shadow: none !important;
+}

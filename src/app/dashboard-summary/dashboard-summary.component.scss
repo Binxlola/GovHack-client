@@ -1,0 +1,55 @@
+@use '@angular/material' as mat;
+@use "src/styles" as styles;
+
+#summary-container {
+  height: 100%;
+  width: 100%;
+  background: none;
+
+  mat-grid-list {
+    width: inherit;
+    height: inherit;
+  }
+}
+
+.summary-item {
+  display: flex;
+  gap: 30px;
+  height: 50px;
+  justify-content: start;
+  align-items: center;
+
+  .mat-icon {
+    font-size: 48px;
+  }
+
+  .summary-item-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    margin-top: 20px;
+
+    h1, p {
+      margin: 0;
+    }
+  }
+}
+
+.mat-grid-tile {
+  width: 100%;
+  border: 2px solid mat.get-color-from-palette(styles.$GovHack-client-primary, 200);
+  border-radius: 10px;
+  background: mat.get-color-from-palette(styles.$GovHack-client-accent, 100);
+}
+
+#time-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: start;
+
+  .small-text {
+    grid-column: 1/3
+  }
+
+}

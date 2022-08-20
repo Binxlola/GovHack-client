@@ -1,0 +1,69 @@
+#app-toolbar {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+
+  #app-toolbar-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  #app-toolbar-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    p {
+      margin: 0;
+    }
+
+    .mat-icon {
+      font-size: 40px;
+    }
+  }
+
+  #app-toolbar-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+
+    button.active::before {
+      content: "";
+      left: 0;
+      bottom: 0;
+      position: absolute;
+      border-radius: .3rem;
+      height: 3px;
+      width: 100%;
+      background: white;
+    }
+
+    button::before {
+      content: "";
+      left: 0;
+      bottom: 0;
+      position: absolute;
+      border-radius: .3rem;
+      height: 3px;
+      width: 0;
+      background: white;
+      transition: width .3s ease-in-out;
+    }
+
+    button:hover::before {
+      content: "";
+      left: 0;
+      bottom: 0;
+      position: absolute;
+      border-radius: .3rem;
+      height: 3px;
+      width: 100%;
+      background: white;
+    }
+  }
+}
+

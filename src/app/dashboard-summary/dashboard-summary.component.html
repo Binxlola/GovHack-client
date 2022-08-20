@@ -1,0 +1,61 @@
+<div id="summary-container" style="overflow-y: auto">
+  <mat-grid-list [cols]="(responsiveService.isHandset | async)!.matches ? 2 : 3" rowHeight="46%" gutterSize="10">
+    <mat-grid-tile colspan="1" rowspan="1">
+      <span class="summary-item">
+        <mat-icon>directions_bus</mat-icon>
+        <span class="summary-item-text">
+          <mat-label>8</mat-label>
+          <mat-label>Buses used this week</mat-label>
+        </span>
+      </span>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+      <span class="summary-item">
+        <mat-icon>savings</mat-icon>
+        <span class="summary-item-text">
+          <mat-label>$230.56</mat-label>
+          <mat-label>Money saved</mat-label>
+        </span>
+      </span>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+      <span class="summary-item">
+        <mat-icon style="color:green">energy_savings_leaf</mat-icon>
+        <span class="summary-item-text">
+          <mat-label>8</mat-label>
+          <mat-label>Carbon emission savings</mat-label>
+        </span>
+      </span>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+      <span class="summary-item">
+        <mat-icon>loyalty</mat-icon>
+        <span class="summary-item-text">
+          <mat-label>150 pt</mat-label>
+          <mat-label>Points earned</mat-label>
+        </span>
+      </span>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+      <span class="summary-item">
+        <mat-icon>timer</mat-icon>
+        <span class="summary-item-text">
+          <div id="time-grid">
+            <mat-label>3</mat-label><mat-label>15</mat-label><mat-label>24</mat-label> <!-- TIME -->
+            <mat-label>Days</mat-label><mat-label>Hours</mat-label><mat-label>Minutes</mat-label> <!-- TIME LABELS -->
+            <mat-label class="small-text">Time not driven</mat-label>
+          </div>
+        </span>
+      </span>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+      <span class="summary-item">
+        <mat-icon>straighten</mat-icon>
+        <span class="summary-item-text">
+          <mat-label>6578km</mat-label>
+          <mat-label>Distance not driven</mat-label>
+        </span>
+      </span>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

@@ -1,0 +1,100 @@
+@use '@angular/material' as mat;
+@use "src/styles" as styles;
+
+.leaderboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+  height: 100%;
+  padding-top: 7px;
+
+  .leaderboard-section {
+    width: 90%;
+    border-radius: 5px;
+  }
+}
+
+.leaderboard-podium {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: flex-end;
+
+  .podium {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 10px;
+
+    .podium-icon-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid black;
+      border-radius: 50%;
+      padding: 10px;
+
+    }
+
+    .podium-text-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+  }
+
+  .podium-first {
+    height: 125px;
+
+    .podium-icon-wrapper {
+      background: gold;
+    }
+  }
+
+  .podium-second {
+    height: 110px;
+
+    .podium-icon-wrapper {
+      background: silver;
+    }
+  }
+
+  .podium-third {
+    height: 95px;
+
+    .podium-icon-wrapper {
+      background: orange;
+    }
+  }
+}
+
+.leaderboard-ranking {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-height: 100%;
+
+  table, mat-paginator {
+    width: 100%;
+
+    th.mat-header-cell {
+      color: mat.get-color-from-palette(styles.$GovHack-client-accent, 500);
+      background: mat.get-color-from-palette(styles.$GovHack-client-primary, 200);
+    }
+
+    .mat-cell {
+      border-color: mat.get-color-from-palette(styles.$GovHack-client-accent, 500);
+    }
+  }
+
+ .mat-cell {
+   text-align: start;
+ }
+}

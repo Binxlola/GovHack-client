@@ -1,0 +1,71 @@
+<div class="leaderboard-container">
+  <div class="leaderboard-podium leaderboard-section">
+    <div class="podium-second podium">
+      <div class="podium-icon-wrapper">
+        <mat-icon>person</mat-icon>
+      </div>
+      <div class="podium-text-wrapper">
+        <mat-label>Jason</mat-label>
+        <mat-label>1000 pts</mat-label>
+      </div>
+    </div>
+    <div class="podium-first podium">
+      <div class="podium-icon-wrapper">
+        <mat-icon>person</mat-icon>
+      </div>
+      <div class="podium-text-wrapper">
+        <mat-label>Patricia</mat-label>
+        <mat-label>3250 pts</mat-label>
+      </div>
+    </div>
+    <div class="podium-third podium">
+      <div class="podium-icon-wrapper">
+        <mat-icon>person</mat-icon>
+      </div>
+      <div class="podium-text-wrapper">
+        <mat-label>Kavindu</mat-label>
+        <mat-label>200 pts</mat-label>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!((responsiveService.isHandset | async)!.matches)" class="leaderboard-ranking leaderboard-section">
+    <table mat-table [dataSource]="dataSource">
+
+      <ng-container matColumnDef="rank">
+        <th mat-header-cell *matHeaderCellDef> Rank</th>
+        <td mat-cell *matCellDef="let element">
+          <mat-label>
+            {{element.rank}}
+            <button mat-icon-button>
+              <mat-icon>account_circle</mat-icon>
+            </button>
+          </mat-label>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element">
+          <mat-label>
+            {{element.name}}
+          </mat-label>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="points">
+        <th mat-header-cell *matHeaderCellDef> Points </th>
+        <td mat-cell *matCellDef="let element">
+          <mat-label>
+            {{element.points}} pts
+          </mat-label>
+        </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[7]" aria-label="Select page of users"></mat-paginator>
+  </div>
+</div>
