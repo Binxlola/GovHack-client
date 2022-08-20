@@ -55,7 +55,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 // SUMMARY CARD STYLES
 #summary-container {
   .mat-grid-tile-content {
-    justify-content: start !important ;
+    justify-content: flex-start !important ;
     padding: 0 15px;
   }
 }
