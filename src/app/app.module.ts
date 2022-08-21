@@ -20,6 +20,9 @@ import {MatListModule} from "@angular/material/list";
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
 
+import * as echarts from 'echarts';
+import { NgxEchartsModule } from 'ngx-echarts';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +34,9 @@ import {MatPaginatorModule} from "@angular/material/paginator";
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    NgxEchartsModule.forRoot({
+      echarts
+    }),
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
