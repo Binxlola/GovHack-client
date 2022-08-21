@@ -1,24 +1,24 @@
 <div class="grid-container">
-  <mat-grid-list [cols]="(responsiveService.isHandset | async)!.matches ? 1 : 2" rowHeight="350px">
+  <mat-grid-list [cols]="(responsiveService.isHandset | async)!.matches ? 1 : 2" rowHeight="450px">
 
     <!-- SUMMARY -->
     <mat-grid-tile id="summary-tile" [colspan]="(responsiveService.isHandset | async)!.matches ? 1 : 2" rowspan="1">
       <mat-card class="dashboard-card">
-        <mat-card-header>
-          <mat-card-title>
-            <mat-label>Summary</mat-label>
-          </mat-card-title>
-        </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <app-dashboard-summary style="height: 100%; width: 100%; background: none"></app-dashboard-summary>
+          <app-dashboard-summary></app-dashboard-summary>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
 
     <mat-grid-tile colspan="1" rowspan="1">
       <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            <mat-label>CO2 equivalent emissions & intensity By Region</mat-label>
+          </mat-card-title>
+        </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <img src="https://wcs.smartdraw.com/chart/img/clustered-bar-chart.png?bn=1510011184300" alt="">
+          <div echarts [options]="chartOneOptions" class="demo-chart"></div>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
@@ -33,11 +33,11 @@
       <mat-card class="dashboard-card">
         <mat-card-header>
           <mat-card-title>
-            Card 4
+            <mat-label>CO2 equivalents (tonnes) per capita</mat-label>
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <div>Card Content Here</div>
+          <div echarts [options]="chartTwoOptions" class="demo-chart"></div>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile> <!-- LEADER BOARD -->

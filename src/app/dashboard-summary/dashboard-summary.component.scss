@@ -3,18 +3,13 @@
 
 #summary-container {
   height: 100%;
-  width: 100%;
   background: none;
-
-  mat-grid-list {
-    width: inherit;
-    height: inherit;
-  }
+  padding: 0 5px;
 }
 
 .summary-item {
   display: flex;
-  gap: 30px;
+  gap: 25px;
   height: 50px;
   justify-content: flex-start;
   align-items: center;
@@ -37,7 +32,6 @@
 }
 
 .mat-grid-tile {
-  width: 100%;
   border: 2px solid mat.get-color-from-palette(styles.$GovHack-client-primary, 200);
   border-radius: 10px;
   background: mat.get-color-from-palette(styles.$GovHack-client-accent, 100);

@@ -1,6 +1,5 @@
-.grid-container {
-  margin: 20px;
-}
+@use '@angular/material' as mat;
+@use "src/styles" as styles;
 
 .dashboard-card {
   position: absolute;
@@ -9,12 +8,6 @@
   right: 15px;
   bottom: 15px;
   background: none;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
 }
 
 .more-button {
@@ -32,6 +25,10 @@
 
 mat-card {
   padding: 0;
+}
+
+mat-card-header {
+  background: mat.get-color-from-palette(styles.$GovHack-client-primary, 200);
 }
 
 mat-card-content {

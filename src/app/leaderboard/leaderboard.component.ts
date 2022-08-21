@@ -28,7 +28,10 @@ export class LeaderboardComponent implements OnInit, AfterViewInit {
     {rank: 7, name: 'John Doe', points: '40'},
     {rank: 8, name: 'Jane Doe', points: '30'},
     {rank: 9, name: 'John Doe', points: '20'},
-    {rank: 10, name: 'Jane Doe', points: '10'}
+    {rank: 10, name: 'Jane Doe', points: '10'},
+    {rank: 11, name: 'John Doe', points: '0'},
+    {rank: 12, name: 'John Doe', points: '0'},
+    {rank: 13, name: 'John Doe', points: '0'},
   ]
 
   public readonly dataSource: MatTableDataSource<Ranking>
